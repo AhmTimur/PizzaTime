@@ -19,19 +19,34 @@ const Home = React.memo(function Home() {
   const { activeCategory, sortType, sortOrder } = useSelector(({ filters }) => filters);
   const cartItems = useSelector(({ cart }) => cart.items);
 
+  console.log(cartItems);
+
   React.useEffect(() => {
     dispatch(fetchPizzas(activeCategory, sortType, sortOrder));
-  }, [activeCategory, sortType, sortOrder]);
+  }, [activeCategory, sortType, sortOrder, dispatch]);
 
-  const onSelectCategory = React.useCallback((index) => {
-    dispatch(setCategory(index));
-  }, []);
-  const onSelectSortType = React.useCallback((type, order) => {
-    dispatch(setSortOption(type, order));
-  }, []);
+  const onSelectCategory = React.useCallback(
+    (index) => {
+      dispatch(setCategory(index));
+    },
+    [dispatch],
+  );
+  const onSelectSortType = React.useCallback(
+    (type, order) => {
+      dispatch(setSortOption(type, order));
+    },
+    [dispatch],
+  );
 
   const handleAddPizza = (params) => {
     dispatch(addPizzaToCart(params));
+  };
+
+  const countItems = (cartItems, type) => {
+    const sameType = Object.keys(cartItems).filter((x) => parseInt(x[0]) === type);
+    return sameType.reduce((sum, key) => {
+      return sum + cartItems[key].items.length;
+    }, 0);
   };
 
   return (
@@ -50,7 +65,7 @@ const Home = React.memo(function Home() {
           ? pizzasArray.map((obj) => {
               return (
                 <PizzaBlock
-                  addedPizzas={cartItems[obj.id] && cartItems[obj.id].items.length}
+                  addedPizzas={countItems(cartItems, obj.id)}
                   onClickAddPizza={handleAddPizza}
                   key={obj.id}
                   {...obj}

@@ -23,13 +23,17 @@ const getTotalSum = (obj, path) => {
 const cart = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_PIZZA_CART': {
-      const currentItems = !state.items[action.payload.id]
-        ? [action.payload]
-        : [...state.items[action.payload.id].items, action.payload];
+      const combinedId = {
+        ...action.payload,
+        id: `${action.payload.id}_${action.payload.activeType}_${action.payload.selectedSize}`,
+      };
+      const currentItems = !state.items[combinedId.id]
+        ? [combinedId]
+        : [...state.items[combinedId.id].items, combinedId];
 
       const newItems = {
         ...state.items,
-        [action.payload.id]: {
+        [combinedId.id]: {
           items: currentItems,
           totalPrice: getTotalPrice(currentItems),
         },

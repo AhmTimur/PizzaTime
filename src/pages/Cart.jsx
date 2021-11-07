@@ -27,7 +27,6 @@ function Cart() {
   const onMinusPizzaCount = (id) => {
     dispatch(minusPizzaCount(id));
   };
-  console.log(!items, 'items');
 
   return (
     <div className="container container--cart">
@@ -105,6 +104,7 @@ function Cart() {
               <span onClick={handleClearClick}>Очистить корзину</span>
             </div>
           </div>
+          {console.log(pizzas)}
           {pizzas.map((item) => {
             return (
               <CartItem
