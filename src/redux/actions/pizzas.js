@@ -21,5 +21,6 @@ export const fetchPizzas =
   };
 
 export const setPizzas = (items) => {
+  console.log(items);
   return { type: 'SET_PIZZAS', payload: items };
 };

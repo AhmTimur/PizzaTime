@@ -18,7 +18,7 @@ const PizzaBlock = React.memo(function PizzaBlock({
 
   const [activeType, setActiveType] = React.useState(types[0]);
   const [selectedSize, setSelectedSize] = React.useState(sizes[0]);
-  const [currentPrice, setCurrentPrice] = React.useState(price[Object.keys(price)[1]]);
+  const [currentPrice, setCurrentPrice] = React.useState(price[selectedSize]);
 
   // console.log(addedPizzas);
   const onSelectType = (index) => {
