@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/PizzaTime/static/css/main.750f77d6.chunk.css",
+    "main.js": "/PizzaTime/static/js/main.4501b785.chunk.js",
+    "main.js.map": "/PizzaTime/static/js/main.4501b785.chunk.js.map",
+    "runtime-main.js": "/PizzaTime/static/js/runtime-main.0f333745.js",
+    "runtime-main.js.map": "/PizzaTime/static/js/runtime-main.0f333745.js.map",
+    "static/js/2.4500d655.chunk.js": "/PizzaTime/static/js/2.4500d655.chunk.js",
+    "static/js/2.4500d655.chunk.js.map": "/PizzaTime/static/js/2.4500d655.chunk.js.map",
+    "index.html": "/PizzaTime/index.html",
+    "static/css/main.750f77d6.chunk.css.map": "/PizzaTime/static/css/main.750f77d6.chunk.css.map",
+    "static/js/2.4500d655.chunk.js.LICENSE.txt": "/PizzaTime/static/js/2.4500d655.chunk.js.LICENSE.txt",
+    "static/media/app.scss": "/PizzaTime/static/media/ProximaNova-Regular.d97f8f32.eot",
+    "static/media/empty-cart.db905d1f.png": "/PizzaTime/static/media/empty-cart.db905d1f.png",
+    "static/media/pizza-logo.56ac8703.svg": "/PizzaTime/static/media/pizza-logo.56ac8703.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0f333745.js",
+    "static/js/2.4500d655.chunk.js",
+    "static/css/main.750f77d6.chunk.css",
+    "static/js/main.4501b785.chunk.js"
+  ]
+}
